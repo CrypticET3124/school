@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class ArrayListNames {
 	static int sorts = 1;
