@@ -23,7 +23,7 @@ public class ArrayListNumberCounter {
 		ArrayList<Integer> array = new ArrayList<>();
 
 		for (int i = 1; i < 100; i++) {
-			array.add(r.nextInt(1000) + 1);
+			array.add(r.nextInt(100) + 1);
 		}
 
 		System.out.println("Enter the number you wish to search:");
