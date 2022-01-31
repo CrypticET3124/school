@@ -15,7 +15,7 @@ public class IntegerBubbleSort {
     }
 
     public static void main(String[] args) {
-        int[] array = {2, 5, 6, 4, 10, 8, 1, 9, 3, 7};
+        int[] array = { 2, 5, 6, 4, 10, 8, 1, 9, 3, 7 };
 
         while (sorts != 0) {
             sorts = 0;

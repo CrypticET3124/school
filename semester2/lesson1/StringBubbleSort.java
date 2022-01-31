@@ -15,7 +15,7 @@ public class StringBubbleSort {
 	}
 
 	public static void main(String[] args) {
-		String[] array = {"Chirs", "Bob", "Mary", "Taco", "Phone", "Watch"};
+		String[] array = { "Chirs", "Bob", "Mary", "Taco", "Phone", "Watch" };
 
 		while (sorts != 0) {
 			sorts = 0;

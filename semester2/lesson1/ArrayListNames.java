@@ -17,7 +17,7 @@ public class ArrayListNames {
 	}
 
 	public static void main(String[] args) {
-		String[] array = {"Zack", "Brendan", "James", "Bjorn", "Jacob", "John", "Revan"};
+		String[] array = { "Zack", "Brendan", "James", "Bjorn", "Jacob", "John", "Revan" };
 
 		ArrayList<String> al = new ArrayList<>();
 
