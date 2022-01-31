@@ -4,7 +4,7 @@ import java.util.List;
 public class ArrayListBubbleSort {
 	static int sorts = 1;
 
-	public static void sort(ArrayList<Integer> array) {
+	public static void sort(List<Integer> array) {
 		for (int i = 0; i < array.size() - 1; i++) {
 			if (array.get(i) > array.get(i + 1)) {
 				int n1 = array.get(i);
