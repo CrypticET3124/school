@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class StringMethodMethod {
+public class StringMethodMethods {
 	public static void firstThreeLetters() {
         Scanner in = new Scanner(System.in);
 
