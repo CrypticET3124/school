@@ -20,7 +20,9 @@ public class Printer {
 	String CurrentDocInfo;
 	
 	public Printer(int x) {
-		ipAddr = "192.168.1." + x";
+		ipAddr = "192.168.1." + x;
+		numPaper = 100;
+		numInk = 400;
 	}
 
 	public void printItem(int docID) {
@@ -33,6 +35,8 @@ public class Printer {
 		docIDs.remove(id);
 		docBodys.remove(id);
 		CurrentDocInfo = "";
+		numPaper--;
+		numInk--;
 	}
 
 	public void scanItem() {
