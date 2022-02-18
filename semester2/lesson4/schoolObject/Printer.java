@@ -73,4 +73,8 @@ public class Printer {
 	public void randomlyBreak() {
 		// :P
 	}
+	
+	public static void main(String[] args) {
+		
+	}
 }
