@@ -7,10 +7,10 @@ public class Person {
 	private String maritalStatus;
 
 	public Person(String fn, String ln, int a, String ms) {
-		fName = fn;
-		lName = ln;
-		age = a;
-		maritalStatus = ms;
+		this.fName = fn;
+		this.lName = ln;
+		this.age = a;
+		this.maritalStatus = ms;
 	}
 
 	public String getFName() { // fName
