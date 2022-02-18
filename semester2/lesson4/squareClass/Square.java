@@ -2,15 +2,15 @@ public class Square {
 	public Double length;
 	
 	public Square(Double l) {
-		length = l;
+		this.length = l;
 	}
 
 	public Square(int l) {
-		length = (double) l;
+		this.length = (double) l;
 	}
 	
 	public Double getArea() {
-		return length * length;
+		return this.length * this.length;
 	}
 
 	public static void main(String[] args) {
