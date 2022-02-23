@@ -9,13 +9,13 @@ public class Book {
 	private int outCopy; // checked out copies
 
 	public Book(String t, String a, String g, String i) {
-		title = t;
-		author = a;
-		genre = g;
-		isbn = i;
-		checkedOut = false;
-		numCopy = 1;
-		outCopy = 0;
+		this.title = t;
+		this.author = a;
+		this.genre = g;
+		this.isbn = i;
+		this.checkedOut = false;
+		this.numCopy = 1;
+		this.outCopy = 0;
 	}
 
 	public String getTitle() { // title
