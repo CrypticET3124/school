@@ -2,11 +2,11 @@ public class Circle {
 	public Double radius;
 	
 	public Circle(Double r) {
-		radius = r;
+		this.radius = r;
 	}
 	
 	public Circle(int r) {
-		radius = (double)r;
+		this.radius = (double)r;
 	}
 	
 	public Double getArea() {
