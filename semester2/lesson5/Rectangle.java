@@ -18,8 +18,6 @@ public class Rectangle extends Square{
 	}
 	
 	public static void main(String[] args) {
-		Rectangle r = new Rectangle(5.5, 6.5);
 
-		System.out.println(r.getArea());
 	}
 }
