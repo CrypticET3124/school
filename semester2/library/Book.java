@@ -7,8 +7,6 @@ public class Book {
 	public String isbn;
 	private double rating;
 	private boolean checkedOut; // if a copy is checked out
-	private int numCopy; // total copies
-	private int outCopy; // checked out copies
 
 	public Book(String t, String a, String g, Double r, String i) {
 		this.title = t;
@@ -17,8 +15,6 @@ public class Book {
 		this.rating = r;
 		this.isbn = i;
 		this.checkedOut = false;
-		this.numCopy = 1;
-		this.outCopy = 0;
 	}
 
 	public String getTitle() { // title
@@ -50,41 +46,15 @@ public class Book {
 	}
 
 	public void checkOut() { // check out copy
-		if(this.numCopy > this.outCopy) {
-			this.checkedOut = true;
-			this.outCopy++;
-		}
+		this.checkedOut=true;
 	}
 
 	public void checkIn() { // check in copy
-		this.outCopy--;
-		if(this.outCopy == 0) {
-			this.checkedOut = false;
-		}
+		this.checkedOut=false;
 	}
 
 	public boolean isCheckedOut() { // return if a copy is checked out
 		return this.checkedOut;
-	}
-
-	public int getCopy() { // return total copies
-		return this.numCopy;
-	}
-
-	public int getOutCopy() { // return checked out copies
-		return this.outCopy;
-	}
-
-	public boolean canCheckOut() { // return if can checkout
-		return this.numCopy > this.outCopy ? true : false;
-	}
-
-	public void addCopy() { // increase total copies
-		this.numCopy++;
-	}
-
-	public void removeCopy() { // decrease total copies
-		this.numCopy--;
 	}
 	
 	@Override
