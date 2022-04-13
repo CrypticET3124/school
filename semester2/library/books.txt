@@ -1,2 +1,8 @@
-The_Hobbit J.R.R._Tolkien Fantasy 10 9780547928227
+The_Hobbit J.R.R._Tolkien High_Fantasy,_Juvenile_Fantasy 10 9780547928227
 Hamlet William_Shakespeare Tragedy 7 9780743477123
+Harry_Potter_and_the_Sorcerer's_Stone J.K._Rowling Fantasy 8 9780590353427
+Harry_Potter_and_the_Chamber_of_Secrets J.K._Rowling Fantasy 7 9780439064866
+The_Lightning_Thief Rick_Riordan Fantasy,_Young_Adult,_Greek_Mythology 9 9780786838653
+Harry_Potter_and_the_Prisoner_of_Azkaban J.K._Rowling Fantasy 6 9780439136365
+The_Ruins_of_Gorlan John_Flanagan Fantasy,_Adventure 9 9780142406632
+Charlie_and_the_Chocolate_Factory Roald_Dahl Children's_Fantasy 7 9780142410318
