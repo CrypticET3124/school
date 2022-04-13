@@ -59,7 +59,7 @@ public class Book {
 	
 	@Override
 	public String toString() {
-		return title + "[author=" + author + ", genre=" + genre + ", rating=" + rating + "]";
+		return title + " [author=" + author + " | genre=" + genre + " | rating=" + rating + "]";
 	}
 
 	public static void main(String[] args) {
