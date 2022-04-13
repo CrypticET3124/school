@@ -20,7 +20,7 @@ public class Interface {
 	
 	public static ArrayList<String> search(int t, String s) {
 		ArrayList<String> results = new ArrayList<>();
-		s = s.toLowerCase();
+		s = s.toLowerCase().replaceAll("'|\"|\||:|;|,", replacement);
 		
 		switch(t) {
 			case 1: // title search
