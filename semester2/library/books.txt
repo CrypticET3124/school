@@ -6,3 +6,4 @@ The_Lightning_Thief Rick_Riordan Fantasy,_Young_Adult,_Greek_Mythology,_Fiction 
 Harry_Potter_and_the_Prisoner_of_Azkaban J.K._Rowling Fantasy,_Fiction 6 9780439136365
 The_Ruins_of_Gorlan John_Flanagan Fantasy,_Adventure,_Fiction 9 9780142406632
 Charlie_and_the_Chocolate_Factory Roald_Dahl Children's_Fantasy,_Fiction 7 9780142410318
+The_Burning_Bridge John_Flanagan Fantasy,_Adventure,_Fiction 8 9781101221228

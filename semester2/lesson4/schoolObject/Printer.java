@@ -17,7 +17,7 @@ public class Printer {
 	int numPaper;
 	double numInk;
 	int numDocs;
-	String CurrentDocInfo;
+	String currentDocInfo;
 	
 	public Printer(int x) {
 		ipAddr = "192.168.1." + x;
@@ -27,14 +27,14 @@ public class Printer {
 
 	public void printItem(int docID) {
 		int id = docIDs.indexOf(docID);
-		CurrentDocInfo = docBodys.get(id);
+		currentDocInfo = docBodys.get(id);
 		
 		System.out.println(docIDs.get(id) + ":");
-		System.out.println(CurrentDocInfo);
+		System.out.println(currentDocInfo);
 
 		docIDs.remove(id);
 		docBodys.remove(id);
-		CurrentDocInfo = "";
+		currentDocInfo = "";
 		numPaper--;
 		numInk--;
 	}
