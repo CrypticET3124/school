@@ -7,3 +7,5 @@ Harry_Potter_and_the_Prisoner_of_Azkaban J.K._Rowling Fantasy,_Fiction 6 9780439
 The_Ruins_of_Gorlan John_Flanagan Fantasy,_Adventure,_Fiction 9 9780142406632
 Charlie_and_the_Chocolate_Factory Roald_Dahl Children's_Fantasy,_Fiction 7 9780142410318
 The_Burning_Bridge John_Flanagan Fantasy,_Adventure,_Fiction 8 9781101221228
+The_Icebound_Land John_Flanagan Fantasy,_Adventure,_Fiction 8 9780142410752
+Halt's_Peril John_Flanagan Fantasy,_Adventure,_Fiction 9 9780142418581
