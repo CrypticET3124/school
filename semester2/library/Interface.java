@@ -9,7 +9,7 @@ public class Interface {
 	
 	public static void getLib() {
 		Library.refreshLib();
-		library = Library.library;
+		library = Library.lib;
 	}
 	
 	public static void login() {

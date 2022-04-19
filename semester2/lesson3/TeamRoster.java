@@ -11,7 +11,7 @@ public class TeamRoster {
 				System.out.println(nameS.nextLine() + " - " + numS.nextLine());
 			}
 		} catch (Exception e) {
-			System.out.println("Error: " + e);
+			e.printStackTrace();
 		}
     }
 }
