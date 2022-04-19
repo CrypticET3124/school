@@ -14,7 +14,7 @@ public class Library {
 	public static void refreshLib() {
 
 		try (Scanner bin = new Scanner(new File(workDIR, "books.txt"))) {
-			while(bin.hasNextLine()) { // Title, Author, Genre, Rating, ISBNq
+			while(bin.hasNextLine()) { // Title, Author, Genre, Rating, ISBN
 				lib.add(new Book(bin.next().replace("_", " "), bin.next().replace("_", " "), bin.next().replace("_", " "), bin.nextDouble(), bin.next()));
 			}
 		} catch (FileNotFoundException e) {
