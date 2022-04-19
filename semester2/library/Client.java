@@ -2,15 +2,20 @@ package library;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Client {
-	public String name;
+	public String username, fname, lname, password;
 	public LocalDate bday;
-	public ArrayList<String> books = new ArrayList<>();
+	public List<String> books = new ArrayList<>();
 	
-	public Client(String n, int y, int m, int d) {
-		this.name = n;
-		bday = LocalDate.of(y, m, d);
+	public Client(String u, String fn, String ln, String p, int y, int m, int d) {
+		this.username = u;
+		this.fname = fn;
+		this.lname = ln;
+		this.password = p;
+
+		this.bday = LocalDate.of(y, m, d);
 	}
 
 	public static void main(String[] args) {

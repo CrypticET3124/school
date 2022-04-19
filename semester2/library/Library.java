@@ -10,6 +10,7 @@ public class Library {
 	static String workDIR = "semester2\\library\\"; //! workDIR is the working directory
 
 	public static final List<Book> lib = new ArrayList<>();
+	public static final List<Client> clients = new ArrayList<>();
 	
 	public static void refreshLib() {
 
