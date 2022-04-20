@@ -1,3 +1,5 @@
+package lesson4.personClass;
+
 public class Person {
 	String fName;
 	String lName;

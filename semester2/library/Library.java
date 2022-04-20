@@ -7,16 +7,17 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Library {
-	static String workDIR = "semester2\\library\\"; //! workDIR is the working directory
+	static String workDIR = "semester2\\library\\"; // ! workDIR is the working directory, must be changed on each system
 
 	public static final List<Book> lib = new ArrayList<>();
 	public static final List<Client> clients = new ArrayList<>();
-	
+
 	public static void refreshLib() {
 
 		try (Scanner bin = new Scanner(new File(workDIR, "books.txt"))) {
-			while(bin.hasNextLine()) { // Title, Author, Genre, Rating, ISBN
-				lib.add(new Book(bin.next().replace("_", " "), bin.next().replace("_", " "), bin.next().replace("_", " "), bin.nextDouble(), bin.next()));
+			while (bin.hasNextLine()) { // Title, Author, Genre, Rating, ISBNq
+				lib.add(new Book(bin.next().replace("_", " "), bin.next().replace("_", " "),
+						bin.next().replace("_", " "), bin.nextDouble(), bin.next()));
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -25,8 +26,8 @@ public class Library {
 
 	public static void main(String[] args) {
 		refreshLib();
-		
-		for(Book b : lib) {
+
+		for (Book b : lib) {
 			System.out.println(b);
 		}
 

@@ -1,3 +1,5 @@
+package lesson5;
+
 public class Box extends Rectangle {
 	public Double height;
 

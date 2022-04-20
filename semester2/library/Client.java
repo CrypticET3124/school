@@ -5,10 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Client {
-	public String username, fname, lname, password;
-	public LocalDate bday;
-	public List<String> books = new ArrayList<>();
-	
+	public String username, password;
+	String fname, lname;
+	LocalDate bday;
+	List<String> books = new ArrayList<>();
+
 	public Client(String u, String fn, String ln, String p, int y, int m, int d) {
 		this.username = u;
 		this.fname = fn;
@@ -19,6 +20,6 @@ public class Client {
 	}
 
 	public static void main(String[] args) {
-		
+
 	}
 }

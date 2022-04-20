@@ -1,3 +1,5 @@
+package lesson4;
+
 public class Book {
 	public String title;
 	public String author;
@@ -47,7 +49,7 @@ public class Book {
 	}
 
 	public void checkOut() { // check out copy
-		if(this.numCopy > this.outCopy) {
+		if (this.numCopy > this.outCopy) {
 			this.checkedOut = true;
 			this.outCopy++;
 		}
@@ -55,7 +57,7 @@ public class Book {
 
 	public void checkIn() { // check in copy
 		this.outCopy--;
-		if(this.outCopy == 0) {
+		if (this.outCopy == 0) {
 			this.checkedOut = false;
 		}
 	}
@@ -83,7 +85,7 @@ public class Book {
 	public void removeCopy() { // decrease total copies
 		this.numCopy--;
 	}
-	
+
 	public static void main(String[] args) {
 		Book b1 = new Book("a", "b", "c", "d");
 

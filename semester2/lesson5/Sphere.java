@@ -1,3 +1,5 @@
+package lesson5;
+
 public class Sphere extends Circle{
 	public Sphere(Double r) {
 		super(r);

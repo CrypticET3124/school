@@ -1,3 +1,5 @@
+package lesson5;
+
 public class Circle {
 	public Double radius;
 	

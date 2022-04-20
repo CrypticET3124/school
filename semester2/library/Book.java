@@ -46,23 +46,23 @@ public class Book {
 	}
 
 	public void checkOut() { // check out copy
-		this.checkedOut=true;
+		this.checkedOut = true;
 	}
 
 	public void checkIn() { // check in copy
-		this.checkedOut=false;
+		this.checkedOut = false;
 	}
 
 	public boolean isCheckedOut() { // return if a copy is checked out
 		return this.checkedOut;
 	}
-	
+
 	@Override
 	public String toString() {
 		return title + " [author=" + author + " | genre=" + genre + " | rating=" + rating + "]";
 	}
 
 	public static void main(String[] args) {
-		
+
 	}
 }

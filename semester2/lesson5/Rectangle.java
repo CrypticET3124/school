@@ -1,3 +1,5 @@
+package lesson5;
+
 public class Rectangle extends Square{
 	public Double width;
 
