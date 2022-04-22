@@ -1,12 +1,9 @@
 package library;
 
 public class Book {
-	public String title;
-	public String author;
-	public String genre;
-	public String isbn;
+	private String title, author, genre, isbn;
 	private double rating;
-	private boolean checkedOut; // if a copy is checked out
+	private boolean checkedOut;
 
 	public Book(String t, String a, String g, Double r, String i) {
 		this.title = t;
@@ -17,20 +14,20 @@ public class Book {
 		this.checkedOut = false;
 	}
 
-	public String getTitle() { // title
-		return this.title;
-	}
+	public String getTitle() {
+        return title;
+    }
 
-	public String getAuthor() { // author
-		return this.author;
+    public String getAuthor() { // author
+		return author;
 	}
 
 	public String getGenre() { // genre
-		return this.genre;
+		return genre;
 	}
 
 	public String getISBN() { // ISBN
-		return this.isbn;
+		return isbn;
 	}
 
 	public void setRating(double r) { // rating
@@ -38,7 +35,7 @@ public class Book {
 	}
 
 	public void setRating(int r) { // rating
-		this.rating = (double) r;
+		this.rating = r;
 	}
 
 	public double getRating() { // return rating
@@ -54,12 +51,12 @@ public class Book {
 	}
 
 	public boolean isCheckedOut() { // return if a copy is checked out
-		return this.checkedOut;
+		return checkedOut;
 	}
 
 	@Override
 	public String toString() {
-		return title + " [author=" + author + " | genre=" + genre + " | rating=" + rating + "]";
+		return getTitle() + " [author=" + author + " | genre=" + genre + " | rating=" + rating + "]";
 	}
 
 	public static void main(String[] args) {

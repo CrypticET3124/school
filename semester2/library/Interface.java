@@ -10,15 +10,16 @@ public class Interface {
 
 	static List<Book> library = new ArrayList<>();
 
-	public static void bookInterface(int index) {
+	public static void bookInterface(int index) { // TODO implement
 		// selected book is
 		Book selectedBook = library.get(index);
-		System.out.println("\n" + selectedBook.title + " by " + selectedBook.author);
+		System.out.println("\n" + selectedBook.getTitle() + " by " + selectedBook.getAuthor());
 	}
 
 	public static void loadLibrary() {
 		Library.refreshLib(); // tell the program to refresh the library
 		library = Library.lib; // set local library to library
+		Library.refreshClients(); // tell the program to refresh the clients
 	}
 
 	public static void login(String u, String p) { // check credentials
@@ -88,9 +89,7 @@ public class Interface {
 
 		// string to title case
 		fname = fname.substring(0, 1).toUpperCase() + fname.substring(1).toLowerCase(); // ? first letter capitalized
-																						// and rest lowercase
 		lname = lname.substring(0, 1).toUpperCase() + lname.substring(1).toLowerCase(); // ? first letter capitalized
-																						// and rest lowercase
 
 		// get birthday
 		while (true) {
@@ -136,6 +135,7 @@ public class Interface {
 		// add client to list
 		Client newUser = new Client(uname, fname, lname, password, year, month, day);
 		Library.clients.add(newUser);
+		Library.writeClient(newUser);
 		System.out.println("You have successfully signed up!");
 		System.out.println(System.lineSeparator() + "Your username is: " + uname + System.lineSeparator());
 
@@ -153,41 +153,41 @@ public class Interface {
 		switch (t) {
 			case 1: // search all
 				for (Book b : library) {
-					if (searchFormat(b.title).contains(s) || searchFormat(b.author).contains(s)
-							|| searchFormat(b.genre).contains(s) || searchFormat(b.isbn).contains(s)) {
-						results.add(b.title + "█" + library.indexOf(b));
+					if (searchFormat(b.getTitle()).contains(s) || searchFormat(b.getAuthor()).contains(s)
+							|| searchFormat(b.getGenre()).contains(s) || searchFormat(b.getISBN()).contains(s)) {
+						results.add(b.getTitle() + "█" + library.indexOf(b));
 					}
 				}
 				break;
 
 			case 2: // title search
 				for (Book b : library) {
-					if (searchFormat(b.title).contains(s)) {
-						results.add(b.title + "█" + library.indexOf(b));
+					if (searchFormat(b.getTitle()).contains(s)) {
+						results.add(b.getTitle() + "█" + library.indexOf(b));
 					}
 				}
 				break;
 
 			case 3: // author search
 				for (Book b : library) {
-					if (searchFormat(b.author).contains(s)) {
-						results.add(b.title + "█" + library.indexOf(b));
+					if (searchFormat(b.getAuthor()).contains(s)) {
+						results.add(b.getTitle() + "█" + library.indexOf(b));
 					}
 				}
 				break;
 
 			case 4: // genre search
 				for (Book b : library) {
-					if (searchFormat(b.genre).contains(s)) {
-						results.add(b.title + "█" + library.indexOf(b));
+					if (searchFormat(b.getGenre()).contains(s)) {
+						results.add(b.getTitle() + "█" + library.indexOf(b));
 					}
 				}
 				break;
 
 			case 5: // isbn search
 				for (Book b : library) {
-					if (searchFormat(b.isbn).contains(s)) {
-						results.add(b.title + "█" + library.indexOf(b));
+					if (searchFormat(b.getISBN()).contains(s)) {
+						results.add(b.getTitle() + "█" + library.indexOf(b));
 					}
 				}
 				break;

@@ -1,0 +1,231 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch ArrayListBubbleSort",
+            "request": "launch",
+            "mainClass": "lesson1.ArrayListBubbleSort",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch ArrayListNames",
+            "request": "launch",
+            "mainClass": "lesson1.ArrayListNames",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch ArrayListNumberCounter",
+            "request": "launch",
+            "mainClass": "lesson1.ArrayListNumberCounter",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch IntegerBubbleSort",
+            "request": "launch",
+            "mainClass": "lesson1.IntegerBubbleSort",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch IntegerBubbleSortCheating",
+            "request": "launch",
+            "mainClass": "lesson1.IntegerBubbleSortCheating",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch StringBubbleSort",
+            "request": "launch",
+            "mainClass": "lesson1.StringBubbleSort",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch FirstThreeLetters",
+            "request": "launch",
+            "mainClass": "lesson2.FirstThreeLetters",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch NameFlipper",
+            "request": "launch",
+            "mainClass": "lesson2.NameFlipper",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Pluralizer",
+            "request": "launch",
+            "mainClass": "lesson2.Pluralizer",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch StringMethodMethods",
+            "request": "launch",
+            "mainClass": "lesson2.StringMethodMethods",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Madlibs2",
+            "request": "launch",
+            "mainClass": "lesson3.Madlibs2",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch PayrollToFile",
+            "request": "launch",
+            "mainClass": "lesson3.PayrollToFile",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch TeamRoster",
+            "request": "launch",
+            "mainClass": "lesson3.TeamRoster",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Book",
+            "request": "launch",
+            "mainClass": "lesson4.Book",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Printer",
+            "request": "launch",
+            "mainClass": "lesson4.Printer",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Square",
+            "request": "launch",
+            "mainClass": "lesson4.Square",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Person",
+            "request": "launch",
+            "mainClass": "lesson4.personClass.Person",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Person(1)",
+            "request": "launch",
+            "mainClass": "lesson4.privatePerson.Person",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Box",
+            "request": "launch",
+            "mainClass": "lesson5.Box",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Circle",
+            "request": "launch",
+            "mainClass": "lesson5.Circle",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Cylinder",
+            "request": "launch",
+            "mainClass": "lesson5.Cylinder",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Rectangle",
+            "request": "launch",
+            "mainClass": "lesson5.Rectangle",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Sphere",
+            "request": "launch",
+            "mainClass": "lesson5.Sphere",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Square(1)",
+            "request": "launch",
+            "mainClass": "lesson5.Square",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Pikachu",
+            "request": "launch",
+            "mainClass": "lesson5.pokemon.Pikachu",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Pokemon",
+            "request": "launch",
+            "mainClass": "lesson5.pokemon.Pokemon",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Umbreon",
+            "request": "launch",
+            "mainClass": "lesson5.pokemon.Umbreon",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Book(1)",
+            "request": "launch",
+            "mainClass": "library.Book",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Client",
+            "request": "launch",
+            "mainClass": "library.Client",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Interface",
+            "request": "launch",
+            "mainClass": "library.Interface",
+            "projectName": "school_7f2a853e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Library",
+            "request": "launch",
+            "mainClass": "library.Library",
+            "projectName": "school_7f2a853e"
+        }
+    ]
+}
