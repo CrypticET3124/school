@@ -19,6 +19,16 @@ public class Client {
 		this.bday = LocalDate.of(y, m, d);
 	}
 
+	public Client(String u, String fn, String ln, String p, int y, int m, int d, List<String> b) {
+		this.username = u;
+		this.fname = fn;
+		this.lname = ln;
+		this.password = p;
+
+		this.bday = LocalDate.of(y, m, d);
+		this.books = b;
+	}
+
 	public static void main(String[] args) {
 
 	}

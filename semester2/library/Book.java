@@ -15,10 +15,10 @@ public class Book {
 	}
 
 	public String getTitle() {
-        return title;
-    }
+		return title;
+	}
 
-    public String getAuthor() { // author
+	public String getAuthor() { // author
 		return author;
 	}
 
@@ -56,7 +56,8 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return getTitle() + " [author=" + author + " | genre=" + genre + " | rating=" + rating + "]";
+		return System.lineSeparator() + getTitle() + " - " + getAuthor() + System.lineSeparator() + getRating()
+				+ "/10 | " + getGenre() + System.lineSeparator();
 	}
 
 	public static void main(String[] args) {

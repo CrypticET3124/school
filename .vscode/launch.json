@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Interface",
+            "request": "launch",
+            "mainClass": "library.Interface",
+            "projectName": "school_a7a07044"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"

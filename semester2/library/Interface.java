@@ -12,8 +12,54 @@ public class Interface {
 
 	public static void bookInterface(int index) { // TODO implement
 		// selected book is
-		Book selectedBook = library.get(index);
-		System.out.println("\n" + selectedBook.getTitle() + " by " + selectedBook.getAuthor());
+		Book currentBook = library.get(index);
+		System.out.println(currentBook.toString());
+
+		boolean running = true;
+		while (running) {
+			if (!currentBook.isCheckedOut()) {
+				System.out.println("1. Check out");
+			}
+			if (currentBook.isCheckedOut() && currentUser.books.contains(Integer.toString(index))) {
+				System.out.println("2. Return");
+			}
+			System.out.println("3. Back");
+			System.out.print("Enter your choice: ");
+
+			int selection;
+			while (true) {
+				try {
+					selection = Integer.parseInt(System.console().readLine());
+					break;
+				} catch (NumberFormatException e) {
+					System.out.println("Invalid selection." + System.lineSeparator());
+				}
+			}
+
+			switch (selection) {
+				case 1:
+					if (!currentBook.isCheckedOut()) {
+						currentBook.checkOut();;
+						System.out.println("Book checked out." + System.lineSeparator());
+					} else {
+						System.out.println("Book already checked out." + System.lineSeparator());
+					}
+					running = false;
+					break;
+				case 2:
+					if (currentBook.isCheckedOut() && currentUser.books.contains(Integer.toString(index))) {
+						currentBook.checkIn();;
+						System.out.println("Book returned." + System.lineSeparator());
+					} else {
+						System.out.println("Book not returned." + System.lineSeparator());
+					}
+					running = false;
+					break;
+				case 3:
+					running = false;
+					break;
+				}
+		}
 	}
 
 	public static void loadLibrary() {
@@ -211,8 +257,15 @@ public class Interface {
 		System.out.println("6. Exit");
 
 		// get search type
-		System.out.println("Enter search type: ");
-		t = Integer.parseInt(System.console().readLine());
+		while (true) {
+			try {
+				System.out.println("Enter search type: ");
+				t = Integer.parseInt(System.console().readLine());
+				break;
+			} catch (NumberFormatException e) {
+				System.out.println("Invalid selection." + System.lineSeparator());
+			}
+		}
 
 		if (t == 6) {
 			return;
@@ -246,9 +299,11 @@ public class Interface {
 				System.out.println("Select book: ");
 				int tempIndex = Integer.parseInt(System.console().readLine()) - 1;
 
-				if (tempIndex >= 0 && tempIndex < results.size()) {
+				if (tempIndex >= 0 && tempIndex <= results.size()) {
 					notBook = false;
 					trueIndex = Integer.parseInt(results.get(tempIndex).split("█")[1]);
+				} else {
+					System.out.println("Invalid selection." + System.lineSeparator());
 				}
 			}
 
