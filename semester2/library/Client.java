@@ -17,6 +17,7 @@ public class Client {
 		this.password = p;
 
 		this.bday = LocalDate.of(y, m, d);
+		this.books.add("-1");
 	}
 
 	public Client(String u, String fn, String ln, String p, int y, int m, int d, List<String> b) {
@@ -27,9 +28,5 @@ public class Client {
 
 		this.bday = LocalDate.of(y, m, d);
 		this.books = b;
-	}
-
-	public static void main(String[] args) {
-
 	}
 }

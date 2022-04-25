@@ -59,8 +59,4 @@ public class Book {
 		return System.lineSeparator() + getTitle() + " - " + getAuthor() + System.lineSeparator() + getRating()
 				+ "/10 | " + getGenre() + System.lineSeparator();
 	}
-
-	public static void main(String[] args) {
-
-	}
 }

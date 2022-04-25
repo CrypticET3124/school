@@ -31,8 +31,8 @@ public class Library {
     public static void writeClient(Client c) { // add client to a file using printwriter
         try (PrintWriter pw = new PrintWriter(new File(workDIR, "clients.txt"))) {
             pw.print(c.username + attributeSep + c.fname + attributeSep + c.lname + attributeSep + c.password
-                    + attributeSep + c.bday.getYear() + attributeSep
-                    + c.bday.getMonthValue() + attributeSep + c.bday.getDayOfMonth() + attributeSep);
+                    + attributeSep + c.bday.getYear() + attributeSep + c.bday.getMonthValue() + attributeSep
+                    + c.bday.getDayOfMonth() + attributeSep);
             for (String b : c.books) {
                 pw.print(b + ".");
             }
