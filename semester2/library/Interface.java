@@ -39,7 +39,7 @@ public class Interface {
 			switch (selection) {
 				case 1:
 					if (!currentBook.isCheckedOut()) {
-						currentBook.checkOut();;
+						currentBook.checkOut();
 						System.out.println("Book checked out." + System.lineSeparator());
 					} else {
 						System.out.println("Book already checked out." + System.lineSeparator());
@@ -48,7 +48,7 @@ public class Interface {
 					break;
 				case 2:
 					if (currentBook.isCheckedOut() && currentUser.books.contains(Integer.toString(index))) {
-						currentBook.checkIn();;
+						currentBook.checkIn();
 						System.out.println("Book returned." + System.lineSeparator());
 					} else {
 						System.out.println("Book not returned." + System.lineSeparator());
@@ -62,7 +62,7 @@ public class Interface {
 					System.out.println("Invalid selection." + System.lineSeparator());
 					running = false;
 					break;
-				}
+			}
 		}
 	}
 
@@ -398,3 +398,10 @@ public class Interface {
 		}
 	}
 }
+
+/*
+ * TODO
+ * Fix client writer
+ * Fix check in doesn't appear
+ * Fix check in remove book
+ */
