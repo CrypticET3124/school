@@ -58,6 +58,10 @@ public class Interface {
 				case 3:
 					running = false;
 					break;
+				default:
+					System.out.println("Invalid selection." + System.lineSeparator());
+					running = false;
+					break;
 				}
 		}
 	}
@@ -297,7 +301,15 @@ public class Interface {
 			boolean notBook = true;
 			while (notBook) {
 				System.out.println("Select book: ");
-				int tempIndex = Integer.parseInt(System.console().readLine()) - 1;
+				int tempIndex;
+				while (true) {
+					try {
+						tempIndex = Integer.parseInt(System.console().readLine()) - 1;
+						break;
+					} catch (NumberFormatException e) {
+						System.out.println("Invalid selection." + System.lineSeparator());
+					}
+				}
 
 				if (tempIndex >= 0 && tempIndex <= results.size()) {
 					notBook = false;
