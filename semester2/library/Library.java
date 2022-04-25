@@ -28,17 +28,19 @@ public class Library {
         }
     }
 
-    public static void writeClient(Client c) { // add client to a file using printwriter
-        try (PrintWriter pw = new PrintWriter(new File(workDIR, "clients.txt"))) {
-            pw.print(c.username + attributeSep + c.fname + attributeSep + c.lname + attributeSep + c.password
-                    + attributeSep + c.bday.getYear() + attributeSep + c.bday.getMonthValue() + attributeSep
-                    + c.bday.getDayOfMonth() + attributeSep);
-            for (String b : c.books) {
-                pw.print(b + ".");
+    public static void writeClients() { // add client to a file using printwriter
+        for (Client c : clients) {
+            try (PrintWriter pw = new PrintWriter(new File(workDIR, "clients.txt"))) {
+                pw.print(c.username + attributeSep + c.fname + attributeSep + c.lname + attributeSep + c.password
+                        + attributeSep + c.bday.getYear() + attributeSep + c.bday.getMonthValue() + attributeSep
+                        + c.bday.getDayOfMonth() + attributeSep);
+                for (String b : c.books) {
+                    pw.print(b + ".");
+                }
+                pw.print(System.lineSeparator());
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            pw.print(System.lineSeparator());
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 
@@ -49,15 +51,11 @@ public class Library {
 
                 List<String> tempBooks = new ArrayList<>();
 
-                if (attr.length == 8) {
-                    Collections.addAll(tempBooks, attr[7].split(Pattern.quote(".")));
+                Collections.addAll(tempBooks, attr[7].split(Pattern.quote(".")));
 
-                    clients.add(new Client(attr[0], attr[1], attr[2], attr[3], Integer.parseInt(attr[4]),
-                            Integer.parseInt(attr[5]), Integer.parseInt(attr[6]), tempBooks));
-                } else {
-                    clients.add(new Client(attr[0], attr[1], attr[2], attr[3], Integer.parseInt(attr[4]),
-                            Integer.parseInt(attr[5]), Integer.parseInt(attr[6])));
-                }
+                clients.add(new Client(attr[0], attr[1], attr[2], attr[3], Integer.parseInt(attr[4]),
+                        Integer.parseInt(attr[5]), Integer.parseInt(attr[6]), tempBooks));
+
             }
         } catch (Exception e) {
             e.printStackTrace();

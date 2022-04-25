@@ -185,7 +185,7 @@ public class Interface {
 		// add client to list
 		Client newUser = new Client(uname, fname, lname, password, year, month, day);
 		Library.clients.add(newUser);
-		Library.writeClient(newUser);
+		Library.writeClients();
 		System.out.println("You have successfully signed up!");
 		System.out.println(System.lineSeparator() + "Your username is: " + uname + System.lineSeparator());
 
@@ -401,7 +401,7 @@ public class Interface {
 
 /*
  * TODO
- * Fix client writer
+ * Fix client writer done
  * Fix check in doesn't appear
  * Fix check in remove book
  */
