@@ -9,14 +9,14 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class Library {
-    static String workDIR = "semester2\\library\\"; // ! workDIR is the working directory, must be changed each system
+    static String workDIR = "semester2\\library\\"; // ! workDIR is the working directory
 
     public static final List<Book> lib = new ArrayList<>();
     public static final List<Client> clients = new ArrayList<>();
 
     private static String attributeSep = "\\[\\"; // ! attribute separator: \[\
 
-    public static void refreshLib() { // load library from file into memory
+    public static void retrieveLib() { // load library from file into memory
         try (Scanner bin = new Scanner(new File(workDIR, "books.txt"))) {
             while (bin.hasNextLine()) {
                 String[] attr = bin.nextLine().split(Pattern.quote(attributeSep));
@@ -44,7 +44,7 @@ public class Library {
         }
     }
 
-    public static void refreshClients() { // load clients from file into memory
+    public static void retrieveClients() { // load clients from file into memory
         try (Scanner bin = new Scanner(new File(workDIR, "clients.txt"))) {
             while (bin.hasNextLine()) {
                 String[] attr = bin.nextLine().split(Pattern.quote(attributeSep));
@@ -63,7 +63,7 @@ public class Library {
     }
 
     public static void main(String[] args) {
-        refreshLib();
+        retrieveLib();
 
         for (Book b : lib) {
             System.out.println(b);

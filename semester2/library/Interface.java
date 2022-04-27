@@ -67,9 +67,9 @@ public class Interface {
 	}
 
 	public static void loadLibrary() {
-		Library.refreshLib(); // tell the program to refresh the library
+		Library.retrieveLib(); // tell the program to refresh the library
 		library = Library.lib; // set local library to library
-		Library.refreshClients(); // tell the program to refresh the clients
+		Library.retrieveClients(); // tell the program to refresh the clients
 	}
 
 	public static void login(String u, String p) { // check credentials
