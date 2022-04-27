@@ -6,17 +6,20 @@ public class Pokemon {
 	public static Random r = new Random();
 
 	public String name;
+	public String[] type;
 	
 	public int lvl;
 	public int[] stat;
 	public int iv;
 	public int[] ev;
 
-	public Pokemon(int l, String n, int i) {
+	public Pokemon(int l, String n, int i, int[] b, String[] t) {
 		this.lvl = l;
 		this.name = n;
 		this.iv = i;
-		
+		this.type = t;
+
+		makeStats(b);
 	}
 
 	public void makeEV() {
