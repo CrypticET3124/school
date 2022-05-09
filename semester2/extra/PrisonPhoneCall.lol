@@ -12,6 +12,6 @@ HAI 1.2
             c R SUM OF 2.5 AN PRODUKT OF 0.5 AN DIFF OF m AN 2
     OIC
 	
-	VISIBLE "The cost is " c
+	VISIBLE "The cost of the phone call is: $" c
 
 KTHXBYE
