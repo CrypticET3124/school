@@ -414,10 +414,3 @@ public class Interface {
 		}
 	}
 }
-
-/*
- * TODO
- * Fix client writer done
- * Fix check in doesn't appear
- * Fix check in remove book
- */
