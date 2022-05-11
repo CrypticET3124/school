@@ -56,7 +56,9 @@ public class Book {
 
 	@Override
 	public String toString() {
+		String c = isCheckedOut() ? "Checked out" : "Available";
+
 		return System.lineSeparator() + getTitle() + " - " + getAuthor() + System.lineSeparator() + getRating()
-				+ "/10 | " + getGenre() + System.lineSeparator();
+				+ "/10 | " + getGenre() + " - " + c + System.lineSeparator();
 	}
 }

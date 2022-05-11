@@ -10,59 +10,66 @@ public class Interface {
 
 	static List<Book> library = new ArrayList<>();
 
-	public static void bookInterface(int index) { // TODO implement
+	public static void bookInterface(int index) {
 		// selected book is
 		Book currentBook = library.get(index);
 		System.out.println(currentBook.toString());
 
-		boolean running = true;
-		while (running) {
-			if (!currentBook.isCheckedOut()) {
-				System.out.println("1. Check out");
-			}
-			if (currentBook.isCheckedOut() && currentUser.books.contains(Integer.toString(index))) {
-				System.out.println("2. Return");
-			}
-			System.out.println("3. Back");
-			System.out.print("Enter your choice: ");
+		if (!currentBook.isCheckedOut()) {
+			System.out.println("1. Check out");
+		}
+		if (currentBook.isCheckedOut() && currentUser.books.contains(index)) {
+			System.out.println("2. Return");
+		}
+		System.out.println("3. Back");
+		System.out.print("Enter your choice: ");
 
-			int selection;
-			while (true) {
-				try {
-					selection = Integer.parseInt(System.console().readLine());
-					break;
-				} catch (NumberFormatException e) {
-					System.out.println("Invalid selection." + System.lineSeparator());
+		int selection;
+		while (true) { // get user's selection and check if it's valid
+			try {
+				selection = Integer.parseInt(System.console().readLine());
+				break;
+			} catch (NumberFormatException e) {
+				System.out.println("Invalid selection." + System.lineSeparator());
+			}
+		}
+
+		switch (selection) {
+			case 1:
+				if (!currentBook.isCheckedOut()) {
+					currentBook.checkOut();
+					
+					if (currentUser.books.contains(-1)) {
+						currentUser.books.remove(currentUser.books.indexOf(-1));
+					}
+					currentUser.books.add(index);
+
+					System.out.println("Book checked out." + System.lineSeparator());
+
+				} else {
+					System.out.println("Book already checked out." + System.lineSeparator());
 				}
-			}
+				break;
+			case 2:
+				if (currentBook.isCheckedOut() && currentUser.books.contains(Integer.toString(index))) {
+					currentBook.checkIn();
+					currentUser.books.remove(index);
 
-			switch (selection) {
-				case 1:
-					if (!currentBook.isCheckedOut()) {
-						currentBook.checkOut();
-						System.out.println("Book checked out." + System.lineSeparator());
-					} else {
-						System.out.println("Book already checked out." + System.lineSeparator());
+					if (currentUser.books.isEmpty()) {
+						currentUser.books.add(-1);
 					}
-					running = false;
-					break;
-				case 2:
-					if (currentBook.isCheckedOut() && currentUser.books.contains(Integer.toString(index))) {
-						currentBook.checkIn();
-						System.out.println("Book returned." + System.lineSeparator());
-					} else {
-						System.out.println("Book not returned." + System.lineSeparator());
-					}
-					running = false;
-					break;
-				case 3:
-					running = false;
-					break;
-				default:
-					System.out.println("Invalid selection." + System.lineSeparator());
-					running = false;
-					break;
-			}
+
+					System.out.println("Book returned." + System.lineSeparator());
+
+				} else {
+					System.out.println("Book not returned." + System.lineSeparator());
+				}
+				break;
+			case 3:
+				break;
+			default:
+				System.out.println("Invalid selection." + System.lineSeparator());
+				break;
 		}
 	}
 
@@ -70,6 +77,14 @@ public class Interface {
 		Library.retrieveLib(); // tell the program to refresh the library
 		library = Library.lib; // set local library to library
 		Library.retrieveClients(); // tell the program to refresh the clients
+
+		for (Client c : Library.clients) {
+			if (c.books.get(0) != -1) {
+				for (Integer b : c.books) {
+					library.get(b).checkOut();
+				}
+			}
+		}
 	}
 
 	public static void login(String u, String p) { // check credentials
@@ -390,6 +405,7 @@ public class Interface {
 					}
 					break;
 				case 5:
+					Library.writeClients();
 					running = false;
 					break;
 				default:

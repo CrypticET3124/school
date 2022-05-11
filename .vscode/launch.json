@@ -9,6 +9,20 @@
             "name": "Launch Interface",
             "request": "launch",
             "mainClass": "library.Interface",
+            "projectName": "school_f2f85c24"
+        },
+        {
+            "type": "java",
+            "name": "Launch Library",
+            "request": "launch",
+            "mainClass": "library.Library",
+            "projectName": "school_f2f85c24"
+        },
+        {
+            "type": "java",
+            "name": "Launch Interface",
+            "request": "launch",
+            "mainClass": "library.Interface",
             "projectName": "school_a7a07044"
         },
         {
