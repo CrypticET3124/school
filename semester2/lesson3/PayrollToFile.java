@@ -1,3 +1,5 @@
+package lesson3;
+
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;

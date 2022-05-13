@@ -1,3 +1,5 @@
+package lesson3;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
