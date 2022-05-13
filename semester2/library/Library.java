@@ -2,6 +2,7 @@ package library;
 
 import java.io.File;
 import java.io.PrintWriter;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -32,7 +33,7 @@ public class Library {
             for (Client c : clients) {
                 String books = "";
                 for (Integer b : c.books) {
-                    books += b + ".";
+                    books += b + "/" + lib.get(b).dueDate + ".";
                 }
 
                 pw.println(c.username + attributeSep + c.fname + attributeSep + c.lname + attributeSep + c.password
@@ -52,7 +53,10 @@ public class Library {
                 List<Integer> tempBooks = new ArrayList<>();
 
                 for (String s : attr[7].split(Pattern.quote("."))) {
-                    tempBooks.add(Integer.parseInt(s));
+                    int index = Integer.parseInt(s.split("/")[0]);
+                    LocalDate due = LocalDate.parse(s.split("/")[1]);
+                    tempBooks.add(index);
+                    lib.get(index).dueDate = due;
                 }
 
                 clients.add(new Client(attr[0], attr[1], attr[2], attr[3], Integer.parseInt(attr[4]),

@@ -1,9 +1,12 @@
 package library;
 
+import java.time.LocalDate;
+
 public class Book {
 	private String title, author, genre, isbn;
 	private double rating;
 	private boolean checkedOut;
+	LocalDate dueDate;
 
 	public Book(String t, String a, String g, Double r, String i) {
 		this.title = t;
@@ -52,6 +55,10 @@ public class Book {
 
 	public boolean isCheckedOut() { // return if a copy is checked out
 		return checkedOut;
+	}
+
+	public void setDueDate(LocalDate plusWeeks) {
+		this.dueDate = plusWeeks;
 	}
 
 	@Override
