@@ -36,5 +36,6 @@ public class PayrollToFile {
 		pw.println("PAY: " + rate * hours);
 
 		pw.close();
+		in.close();
 	}
 }

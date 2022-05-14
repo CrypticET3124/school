@@ -20,5 +20,7 @@ public class NameFlipper {
         String name = in.nextLine();
 
         System.out.println("Your name flipped is: " + flip(name));
+
+        in.close();
     }
 }

@@ -38,5 +38,7 @@ public class ArrayListNumberCounter {
 		in.nextLine();
 
 		System.out.println(search(x, array));
+
+		in.close();
 	}
 }
