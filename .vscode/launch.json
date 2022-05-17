@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ArrayListBubbleSort",
+            "request": "launch",
+            "mainClass": "lesson1.ArrayListBubbleSort",
+            "projectName": "school_f910e99e"
+        },
+        {
+            "type": "java",
             "name": "Launch Interface",
             "request": "launch",
             "mainClass": "library.Interface",
