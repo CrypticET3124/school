@@ -34,5 +34,7 @@ public class Pluralizer {
         String word = in.nextLine();
 
         System.out.println("The plural of " + word + " is " + pluralize(word));
+
+        in.close();
     }
 }

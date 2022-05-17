@@ -1,5 +1,6 @@
 package library;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -8,17 +9,18 @@ public class Interface {
 	static Client currentUser;
 	static int currentUserIndex;
 
-	static List<Book> library = new ArrayList<>();
-
 	public static void bookInterface(int index) {
 		// selected book is
-		Book currentBook = library.get(index);
+		Book currentBook = Library.lib.get(index);
 		System.out.println(currentBook.toString());
+		if (currentUser.books.contains(index)) {
+			System.out.println("Due: " + currentBook.dueDate);
+		}
 
 		if (!currentBook.isCheckedOut()) {
 			System.out.println("1. Check out");
 		}
-		if (currentBook.isCheckedOut() && currentUser.books.contains(index)) {
+		if (currentUser.books.contains(index)) {
 			System.out.println("2. Return");
 		}
 		System.out.println("3. Back");
@@ -44,6 +46,9 @@ public class Interface {
 					}
 					currentUser.books.add(index);
 
+					LocalDate today = LocalDate.now();
+					currentBook.setDueDate(today.plusWeeks(2));
+
 					System.out.println("Book checked out." + System.lineSeparator());
 
 				} else {
@@ -51,7 +56,7 @@ public class Interface {
 				}
 				break;
 			case 2:
-				if (currentBook.isCheckedOut() && currentUser.books.contains(Integer.toString(index))) {
+				if (currentBook.isCheckedOut() && currentUser.books.contains(index)) {
 					currentBook.checkIn();
 					currentUser.books.remove(index);
 
@@ -73,15 +78,43 @@ public class Interface {
 		}
 	}
 
+	public static void listUserBooks() {
+		if (currentUser.books.contains(-1)) {
+			System.out.println("You have no books checked out." + System.lineSeparator());
+		} else {
+			System.out.println("You have the following books checked out:" + System.lineSeparator());
+			for (int i = 0; i < currentUser.books.size(); i++) {
+				if (currentUser.books.get(i) != -1) {
+					System.out.println(Library.lib.get(currentUser.books.get(i)).toString());
+					System.out.println("Due: " + Library.lib.get(currentUser.books.get(i)).dueDate + System.lineSeparator());
+				}
+			}
+		}
+	}
+
+	public static void checkDueBooks() {
+		for (int i : currentUser.books) {
+			if (i != -1) {
+				try {
+					if (Library.lib.get(i).dueDate.compareTo(LocalDate.now()) < 0) {
+						System.out.println(
+								"The book " + Library.lib.get(i).getTitle() + " is due today" + System.lineSeparator());
+					}
+				} catch (NullPointerException e) {
+
+				}
+			}
+		}
+	}
+
 	public static void loadLibrary() {
 		Library.retrieveLib(); // tell the program to refresh the library
-		library = Library.lib; // set local library to library
 		Library.retrieveClients(); // tell the program to refresh the clients
 
 		for (Client c : Library.clients) {
 			if (c.books.get(0) != -1) {
 				for (Integer b : c.books) {
-					library.get(b).checkOut();
+					Library.lib.get(b).checkOut();
 				}
 			}
 		}
@@ -217,42 +250,42 @@ public class Interface {
 
 		switch (t) {
 			case 1: // search all
-				for (Book b : library) {
+				for (Book b : Library.lib) {
 					if (searchFormat(b.getTitle()).contains(s) || searchFormat(b.getAuthor()).contains(s)
 							|| searchFormat(b.getGenre()).contains(s) || searchFormat(b.getISBN()).contains(s)) {
-						results.add(b.getTitle() + "█" + library.indexOf(b));
+						results.add(b.getTitle() + "█" + Library.lib.indexOf(b));
 					}
 				}
 				break;
 
 			case 2: // title search
-				for (Book b : library) {
+				for (Book b : Library.lib) {
 					if (searchFormat(b.getTitle()).contains(s)) {
-						results.add(b.getTitle() + "█" + library.indexOf(b));
+						results.add(b.getTitle() + "█" + Library.lib.indexOf(b));
 					}
 				}
 				break;
 
 			case 3: // author search
-				for (Book b : library) {
+				for (Book b : Library.lib) {
 					if (searchFormat(b.getAuthor()).contains(s)) {
-						results.add(b.getTitle() + "█" + library.indexOf(b));
+						results.add(b.getTitle() + "█" + Library.lib.indexOf(b));
 					}
 				}
 				break;
 
 			case 4: // genre search
-				for (Book b : library) {
+				for (Book b : Library.lib) {
 					if (searchFormat(b.getGenre()).contains(s)) {
-						results.add(b.getTitle() + "█" + library.indexOf(b));
+						results.add(b.getTitle() + "█" + Library.lib.indexOf(b));
 					}
 				}
 				break;
 
 			case 5: // isbn search
-				for (Book b : library) {
+				for (Book b : Library.lib) {
 					if (searchFormat(b.getISBN()).contains(s)) {
-						results.add(b.getTitle() + "█" + library.indexOf(b));
+						results.add(b.getTitle() + "█" + Library.lib.indexOf(b));
 					}
 				}
 				break;
@@ -343,14 +376,16 @@ public class Interface {
 		if (currentUser != null) {
 			System.out.println("Welcome " + currentUser.fname + "!");
 			System.out.println("3. Search");
-			System.out.println("4. Logout");
+			System.out.println("4. List your books");
+			System.out.println("5. Logout");
 		} else {
 			System.out.println("1. Login");
 			System.out.println("2. Sign up");
 			System.out.println("3. Search (login required)");
-			System.out.println("4. Logout (login required)");
+			System.out.println("4. List your books (login required");
+			System.out.println("5. Logout (login required)");
 		}
-		System.out.println("5. Exit");
+		System.out.println("6. Exit");
 
 		System.out.println("Enter selection: ");
 	}
@@ -362,6 +397,12 @@ public class Interface {
 		// main menu
 		boolean running = true;
 		while (running) {
+			boolean shown = false;
+			if (currentUser != null && !shown) {
+				shown = true;
+				checkDueBooks();
+			}
+
 			printMainMenu();
 
 			int selection;
@@ -399,12 +440,19 @@ public class Interface {
 					break;
 				case 4:
 					if (currentUser != null) {
+						listUserBooks();
+					} else {
+						System.out.println("You must be logged in to list your books.");
+					}
+					break;
+				case 5:
+					if (currentUser != null) {
 						logout();
 					} else {
 						System.out.println("You are not logged in.");
 					}
 					break;
-				case 5:
+				case 6:
 					Library.writeClients();
 					running = false;
 					break;

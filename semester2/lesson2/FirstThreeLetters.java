@@ -11,5 +11,7 @@ public class FirstThreeLetters {
         String word = in.nextLine();
 
         System.out.println("The first three letters are: " + word.substring(0, 3));
+
+        in.close();
     }
 }
